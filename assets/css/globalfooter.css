@@ -43,29 +43,43 @@ footer {
     text-align: right;
 }
 
-#footer-icons a {
-    padding-left: 8px;
-    padding-right: 8px;
-    background-color: #f8f9fa;
-}
-
 img {
     border: 0;
     vertical-align: middle;
 }
 
-/* flc: footer copyright logo */
+/* Style for the fcl-button. fcl: footer copyright logo */
 .fcl-button {
-    min-height: 44px;
-    color: var(--color-base, #202122);
-    border-color: var(--border-color-interactive, #72777d);
+    display: inline-flex; /* Use flexbox to center content */
+    align-items: center; /* Vertically center the image */
+    justify-content: center; /* Horizontally center the image */
+    width: 84px; /* Set the width of the button */
+    height: 42px; /* Set the height of the button */
+    border: 1px solid gray;
+    border-radius: 2px;
+    text-decoration: none; /* Remove underline from links */
 }
 
-.fcl-button--size-large {
+#footer-icons a {
+    padding-left: 8px;
+    padding-right: 8px;
+    /* border: 1px solid green; */
+    background-color: #f8f9fa;
+}
+
+.fcl-button img {
+    height: 29px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* weight: 84px; */
+}
+
+/* .fcl-button--size-large {
     min-height: 44px;
+    height: 50px;
     padding-right: 15px;
     padding-left: 15px;
-}
+} */
 
 
 
