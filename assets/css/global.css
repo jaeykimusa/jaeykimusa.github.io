@@ -1,0 +1,10 @@
+html {
+    font-size: 100%;
+    display: block;
+    touch-action: manipulation;
+}
+
+html, body {
+    /* font-family: sans-serif; */
+    height: 100%;
+}

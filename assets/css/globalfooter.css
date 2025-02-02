@@ -1,6 +1,7 @@
 .global-footer-container {
     padding-top: 50px;
     padding-bottom: 82px;
+    background-color: white;
 }
 
 footer {
@@ -57,7 +58,7 @@ img {
 .fcl-button {
     min-height: 44px;
     color: var(--color-base, #202122);
-    border-color: #72777d;
+    border-color: var(--border-color-interactive, #72777d);
 }
 
 .fcl-button--size-large {
