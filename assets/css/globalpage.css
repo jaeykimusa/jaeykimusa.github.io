@@ -1,4 +1,16 @@
+@charset "UTF-8";
+
 .global-page-container {
     padding-left: 44px;
     padding-right: 44px;
+}
+
+body {
+    margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+    background-color: white;
+	font-style: normal;
+	font-weight: 200;
 }
