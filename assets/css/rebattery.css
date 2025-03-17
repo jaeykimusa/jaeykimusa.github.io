@@ -57,44 +57,111 @@ body {
 
 
 /* Adjustments for member section. */
-.rb-project-member {
-    width: 170px;
-    border: 1px solid black;
+.rb-project-member-library {
+    display: flex;
+    gap: 25px;
 }
 
-.rb-project-member img {
+.rb-project-member-profile {
+    width: 170px;
+    /* height: 265px; */
+    border: 1px solid black;
+    /* display: inline; */
+    /* display: flex; */
+}
+
+.rb-project-member-profile img {
     width: 170px;
     height: 220px;
+    padding: 0;
+    margin: 0;
     object-fit: cover;
     object-position: center;
+    display: block; /* SOLUTION TO A GAP */
+    /* Protect member headshots. */
+    pointer-events: none;
 }
 
-#no-pic {
+/* #no-pic {
     width: 170px;
     height: 220px;
     font: bold;
     font-size: 15px;
     text-align: center;
     line-height: 220px;
-}
+} */
 
 .rb-project-member-name {
     border-top: 1px solid black;
     width: 170px;
     height: 20px;
     text-align: center;
-    line-height: 10px;
+    line-height: 20px;
     border-bottom: 1px solid black;
 }
 
 .rb-project-member-role {
-    width: 170px;
-    height: 20px;
+    width: 164px;
+    /* height: 20px; */
     font-size: 11px;
     text-align: center;
-    line-height: 20px;
+    /* line-height: 20px; */
+    padding: 3px;
 }
 
+
+/* Content container box. */
+.rb-content-container {
+    /* border: 1px solid black; */
+    padding: 10px 0 30px 0;
+    display: flex;
+    position: relative;
+    /* align-items: center;; */
+}
+
+.rb-content-container-title {
+    height: 35px;
+    padding: 0 15px;
+    border: 1px solid black;
+    background-color: white;
+    font-weight: bold;
+    line-height: 35px;
+    position: absolute;
+}
+
+.rb-content-container-title-green {
+    height: 35px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #37B34A;
+    background-color: none;
+    position: absolute;
+}
+
+.rb-content-container-inner {
+    display: flex;
+    margin-top: 17.5px;
+    padding-top: 27.5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    border: 1px solid black;
+    /* max-width: 400px; */
+    background-color: white;
+    /* position: absolute; */
+}
+
+.rb-content-container-inner-green {
+    display: flex;
+    margin-top: 17.5px;
+    padding-top: 27.5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    color: #37B34A;
+    border: 1px solid #37B34A;
+    background-color: white;
+}
 
 
 
