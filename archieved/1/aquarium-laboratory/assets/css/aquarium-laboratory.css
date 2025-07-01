@@ -1,0 +1,138 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 12px; /* Small font size */
+    background-color: #cce7f0; /* Pastel sky blue */
+  }
+  
+  .global-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Navigation Bar */
+  .globalnavigator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa; /* Pastel white */
+    padding: 10px 20px;
+  }
+  
+  .navbar-title {
+    font-weight: bold;
+  }
+  
+  .navbar-elements {
+    display: flex;
+  }
+  
+  .navbar-element {
+    margin: 0 10px;
+  }
+  
+  .navbar-element a,
+  .navbar-contact a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .navbar-contact a {
+    font-style: italic;
+  }
+  
+  /* Page Content */
+  .global-page-container-inner {
+    flex-grow: 1; /* Ensures footer stays at the bottom of the page */
+  }
+  
+  .content-container {
+    background-color: #f8f9fa; /* Pastel white for content area */
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+  }
+  
+  .content-container-large-title h1 {
+    font-size: 18px; /* Slightly larger for headings */
+  }
+  
+  .content-container-inner p {
+    line-height: 1.5;
+  }
+  
+  /* Footer */
+  .global-footer-container {
+    background-color: #f8f9fa; /* Pastel white */
+  }
+  
+  .global-footer {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  #footer-info {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #footer-info li {
+    margin-bottom: 5px;
+  }
+
+/* STORE */
+/* Store Page Specific Styles */
+.store-layout {
+  display: flex;
+  gap: 20px;
+}
+
+.store-category-container {
+  flex: 0 0 200px;
+  background-color: #f8f9fa;
+  padding: 15px;
+}
+
+.category-filter-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.category-checkbox {
+  margin-right: 5px;
+}
+
+.store-product-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.product-box {
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.product-image {
+  width: 100%;
+  height: auto; /* Ensures responsive scaling */
+  
+  /* Ensures square aspect ratio */
+  aspect-ratio: 1 / 1; 
+  object-fit: cover; /* Crops the image to fit the square without distortion */
+}
+
+.product-title {
+  font-weight: bold;
+  margin-top: 10px; /* Adds spacing below image */
+}
+
+.product-price {
+  color: #2c7da0;
+}

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+.global-footer-container {
+    padding-top: 50px;
+    padding-bottom: 82px;
+    font-family: Arial, sans-serif;
+    /* font-family: monospace,monospace; */
+    font-size: 0.75em;
+    line-height: 1.4;
+    background-color: white;
+}
+
+footer {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.global-footer {
+    direction: ltr;
+    border-top: 1px solid var(--border-color-base, #a2a9b1);
+    padding: 0.75em 0;
+}
+
+.global-footer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#footer-info li {
+    line-height: 1.4;
+}
+
+.global-footer li {
+    color: var(--color-base, #202122);
+    margin: 0;
+    padding: 0.5em 0;
+    font-size: 0.75em;
+}
+
+#footer-icons {
+    margin-top: 18px;
+    float: right;
+}
+
+#footer-icons li {
+    float: left;
+    margin-left: 0.5em;
+    line-height: 2;
+    text-align: right;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/* Style for the fcl-button. fcl: footer copyright logo */
+.fcl-button {
+    display: inline-flex; /* Use flexbox to center content */
+    align-items: center; /* Vertically center the image */
+    justify-content: center; /* Horizontally center the image */
+    width: 84px; /* Set the width of the button */
+    height: 42px; /* Set the height of the button */
+    border: 1px solid gray;
+    border-radius: 2px;
+    text-decoration: none; /* Remove underline from links */
+}
+
+#footer-icons a {
+    padding-left: 8px;
+    padding-right: 8px;
+    /* border: 1px solid green; */
+    background-color: #f8f9fa;
+}
+
+.fcl-button img {
+    height: 29px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    /* weight: 84px; */
+}
+
+/* .fcl-button--size-large {
+    min-height: 44px;
+    height: 50px;
+    padding-right: 15px;
+    padding-left: 15px;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

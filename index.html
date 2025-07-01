@@ -3,103 +3,50 @@
     <head>
         <meta charset="UTF-8">
         <title>jaeykimusa</title>
-        <link rel="icon" type="image/x-icon" href="assets/images/logos/networks-logo.png">
+        <link rel="icon" type="image/x-icon" href="">
 
-        <link rel="stylesheet" href="assets/css/globalnavigator.css">
-        <link rel="stylesheet" href="assets/css/globalheader.css">
-        <link rel="stylesheet" href="assets/css/globalfooter.css">
-        <link rel="stylesheet" href="assets/css/global.css">
-        <link rel="stylesheet" href="assets/css/globalpage.css">
-
-        
-        <!-- <link rel="stylesheet" href="assets/css/pages.css"> -->
-
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
 
-        <!-- <div class="global-header-container">
-
-        </div> -->
-
-        <div class="global-page-container">
-            <nav class="navbar">
-                <div class="navbar-logo">jaeykimusa</div>
-                <div class="navbar-links">
-                    <a href="#notebook">WikiRobot</a>
-                    <a href="#research-paper-report">Research Paper Report</a>
-                    <a href="#about-me">About Me</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
-            <div class="global-page-container-inner">
-                <h1>jaeykimusa</h1>
-                <p>This is a paragraph.</p>
-                
-                <a href="pages/notebook.html">Notebook</a><br>
-                <a href="pages/paper-report.html">Paper report</a><br>
-                <a href="pages/about-me.html">About me</a><br>
-                <a href="pages/contacts.html">Contacts</a>
-
-
-                <div class="global-footer-container">
-                    <footer id="footer" class="global-footer">
-                        <ul id="footer-info">
-                            <li id="footer-info-lastmod">
-                                This page was last edited on 31 January 2025, at 17:37. 
-                            </li>
-
-                            <li id="footer-info-copyright">
-                                © 2025 jaeykimusa. All rights reserved. This website is developed and maintained by a student at the Department 
-                                of Mechanical and Aerospace Engineering, North Carolina State University. The content herein serves as a personal 
-                                repository of engineering terms and concepts for educational purposes and future reference. While every effort 
-                                has been made to ensure accuracy, please note that the information presented may include material from various 
-                                sources, which are duly cited where applicable. All original content and organization of information are copyright 
-                                protected. For any third-party content, rights and attributions remain with their respective owners. This website 
-                                is not affiliated with or endorsed by North Carolina State University. 
-                            </li>
-                        </ul>
-                        <ul id="footer-places">
-                            
-                        </ul>
-                        <ul id="footer-icons" class="noprint">
-                            <!-- <li id="footer-copyright-networks">
-                                <a href="networks.html" class="fcl-button fcl-button--size-large">
-                                    <img src="assets/images/logos/networks-logo.png" alt="Networks" loading="lazy">
-                                </a>
-                            </li> -->
-                            <!-- <li id="footer-copyright-love-a-sea-turtle">
-                                <a href="love-a-sea-turtle.html" class="fcl-button fcl-button--size-large">
-                                    <img src="assets/images/logos/love-a-sea-turtle-logo.png" alt="Love A Sea Turtle (LAST)" loading="lazy">
-                                </a>
-                            </li> -->
-                            <li id="footer-copyright-aquarium-laboratory">
-                                <a href="aquarium-laboratory.html" class="fcl-button fcl-button--size-large">
-                                    <img src="assets/images/logos/aquarium-laboratory-banner.png" alt="Aquarium Laboratory" loading="lazy">
-                                </a>
-                            </li>
-                            <li id="footer-copyright-re-battery">
-                                <a href="rebattery.html" class="fcl-button fcl-button--size-large">
-                                    <img src="assets/images/logos/re-battery-banner.png" alt="Re-Batter Recyclig Program" loading="lazy">
-                                </a>
-                            </li>
-                            <li id="footer-copyright-hier-lab">
-                                <a href="https://hier-robotics.github.io/" class="fcl-button fcl-button--size-large">
-                                    <img src="assets/images/logos/hier-lab-logo-title-only.png" alt="HIER Lab" loading="lazy">
-                                </a>
-                            </li>
-                            <li id="footer-copyright-nc-state-university">
-                                <a href="https://mae.ncsu.edu/" class="fcl-button">
-                                    <img src="assets/images/logos/ncstate-logo-blk.png" alt="NC State University" loading="lazy">
-                                </a>
-                            </li>
-                        </ul>
-
-                    </footer>
-
-                </div>
-            </div>
-        </div>
+        <details>
+            <summary><strong>Whole-arm manipulator</strong></summary>
+            <p>
+                The field of robotic manipulation is undergoing rapid transformation with the integration of high-performance control systems, lightweight actuators, and intelligent vision-based perception. Autonomous robotic manipulators that can see, think, and act independently are becoming foundational technologies across numerous industries—including logistics, manufacturing, service robotics, and medical applications. In particular, the fusion of real-time computer vision and autonomous motion planning has become a significant research and industrial focus globally, as evidenced by projects like Tesla’s Optimus, Boston Dynamics' Atlas with object interaction, and Amazon’s warehouse robots. These systems demand robust sensor integration and efficient, agile actuation for dynamic and intelligent interaction with unstructured environments.
+            </p>
+            <p>
+                At North Carolina State University, our student-led research team has developed a six-degrees-of-freedom robotic arm using stepper motors and a DC-motor-powered gripper. We are actively designing and implementing a high-level controller to autonomously complete tasks such as object detection, grasping, and relocation. While the current setup allows for fundamental kinematic experimentation and initial controller validation, a major challenge has emerged: the stepper motors used in the joints are too bulky and heavy, which significantly limits the robot’s responsiveness, payload capacity, and agility.
+            </p>
+            <p>
+                To overcome this, we propose transitioning to brushless DC (BLDC) motors paired with Field-Oriented Control (FOC) drivers such as the DRV8302 or ODrive S1. Unlike stepper motors, BLDC motors with FOC offer precise and responsive control over speed, position, and torque while enabling both passive and active compliance within the system. BLDC motors are also significantly more power-dense, lightweight, and efficient, with the ability to achieve higher speeds and torque outputs. Additionally, they produce less heat and operate with smoother (and quieter) motion, which is critical for dynamic robotic arms performing fine motor tasks.
+            </p>
+            <p>
+                To achieve full autonomy in perception and manipulation, we also propose integrating a Luxonis OAK-4 S camera, a powerful AI-enabled RGB-D vision system that supports onboard neural network inference and spatial object detection. This camera enables real-time scene understanding, object localization, and high-precision pose estimation—key capabilities for autonomous grasping and placement.
+            </p>
+            <p>
+                Through this project, we aim to redesign our manipulator for lightweight and speed-optimized performance while developing an intelligent control framework that enables the robot to perceive, plan, and execute motions independently. Our efforts represent a student-driven initiative to advance NC State University’s presence in the field of intelligent robotics and contribute meaningfully to the broader robotics research community.
+            </p>
+        </details>
+        <!-- <details>
+            <summary><strong>Manipulator</strong> (click to expand):</summary>
+            - 📂 [Complex Urban Dataset](https://sites.google.com/view/complex-urban-dataset) : Complex Urban Dataset with Multi-level Sensors from Highly Diverse Urban Environments;
+            - 📂 [MulRan](https://sites.google.com/view/mulran-pr/home) : Multimodal Range Dataset for Urban Place Recognition;
+            - 📂 [STheReO Dataset](https://sites.google.com/view/rpmsthereo/) : Stereo Thermal Dataset for Research in Odometry and Mapping;
+            - 📂 [TRansPose](https://sites.google.com/view/transpose-dataset/) : Large-Scale Multispectral Dataset for Transparent Object;
+            - 📂 [HeLiPR Dataset](https://sites.google.com/view/heliprdataset) : Heterogeneous LiDAR Dataset for inter-LiDAR Place Recognition;
+        </details> -->
+        <details>
+            <summary><strong>Dynamic Jumping of Quadruped Robots via Adaptive Planning of Contacts and Variable-Frequency Predictive Control</strong></summary>
+            <p><i>
+                Abstract—Dynamic and adaptive jumping in quadruped robots has been extensively studied to enhance mobility over rough terrains and in dynamic environments. One of the challenges in this domain is designing contact sequences and generating optimal center-of-mass (CoM) trajectories to improve both the stability and performance of jumping behaviors. In this study, we propose a novel framework that integrates trajectory optimization, whole-body control (WBC), and model predictive control (MPC) to produce more agile and efficient jumping motions for quadruped robots. One of the main contributions of the proposed study is the dynamic adjustment of the prediction horizon in MPC based on a reduced-order model, such as the single rigid-body (SRB) dynamic model. This adaptive design leverages physical insights into jumping behaviors depending on each contact mode to significantly improve computational efficiency, which is critical for real-time applications in layered control architectures. Furthermore, we ensure dynamic consistency by integrating the reduced-order MPC and full-order WBC, enabling more accurate and robust execution of the optimized motion under the optimized sequence of contacts. The effectiveness of the proposed approach is demonstrated through high-fidelity simulations and experiments involving sequential jumping tasks, where the robot exhibits improved landing stability, increased jumping height, and extended jump distance compared to baseline methods.
+            </i>
+            </p>
+        </details>
+        <em>
+            test
+        </em>
 
     </body>
+    
 </html>

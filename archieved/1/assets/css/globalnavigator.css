@@ -1,0 +1,39 @@
+.globalnavigator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    
+    padding: 10px 0;
+}
+
+.navbar-title {
+    color: black;
+    font-size: 1em;
+    font-family: Times New Roman, serif;
+    /* font-weight: bold; */
+}
+
+.navbar-elements {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-element {
+    display: inline-block;
+}
+.navbar-element a {
+    display: inline-block;
+    text-decoration: none;
+    color: #0077cc;
+    font-size: 0.875rem;
+    transition: color 0.3s, background 0.3s;
+}
+
+.navbar-element a:hover {
+    color: #0055aa;
+}
