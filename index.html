@@ -4,49 +4,224 @@
         <meta charset="UTF-8">
         <title>jaeykimusa</title>
         <link rel="icon" type="image/x-icon" href="">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        <link rel="stylesheet" href="css/style.css">
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+                background-color: white;
+                color: black;
+                line-height: 1.5;
+                padding: 40px;
+                max-width: 800px;
+                margin: 0 auto;
+                font-size: 14px;
+            }
+
+            .card {
+                background: transparent;
+                padding: 0;
+                margin-bottom: 0;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                color: black;
+                text-align: center;
+                margin-bottom: 8px;
+                padding-bottom: 8px;
+            }
+
+            .subtitle {
+                text-align: center;
+                color: black;
+                font-size: 1em;
+                margin-bottom: 25px;
+            }
+
+            .section {
+                margin-bottom: 25px;
+            }
+
+            .section h2 {
+                color: black;
+                font-size: 1.1em;
+                margin-bottom: 12px;
+                padding-left: 0;
+            }
+
+            .section ul {
+                list-style: none;
+                padding-left: 15px;
+            }
+
+            .section li {
+                padding: 8px 0 8px 25px;
+                border-bottom: 1px solid #ecf0f1;
+                background-image: url('black-arrow-button.png');
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 12px 12px;
+            }
+
+            .section li:last-child {
+                border-bottom: none;
+            }
+
+            .contact-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .contact-item {
+                background: #3498db;
+                color: white;
+                padding: 8px 16px;
+                border-radius: 25px;
+                text-decoration: none;
+                transition: background 0.3s ease;
+                font-weight: 400;
+                font-size: 0.9em;
+            }
+
+            .contact-item:hover {
+                background: #2980b9;
+                transform: translateY(-2px);
+            }
+
+            details {
+                margin: 15px 0;
+                border: 1px solid #bdc3c7;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            summary {
+                background: #ecf0f1;
+                padding: 12px 15px;
+                cursor: pointer;
+                font-weight: 400;
+                color: black;
+                transition: background 0.3s ease;
+                font-size: 0.95em;
+            }
+
+            summary:hover {
+                background: #d5dbdb;
+            }
+
+            details p {
+                padding: 15px;
+                text-align: justify;
+                color: black;
+                font-size: 0.9em;
+            }
+
+            .skills {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .skill-tag {
+                background: #e8f5e8;
+                color: #27ae60;
+                padding: 5px 12px;
+                border-radius: 15px;
+                font-size: 0.9em;
+                border: 1px solid #27ae60;
+            }
+
+            @media (max-width: 600px) {
+                body {
+                    padding: 10px;
+                }
+                
+                .card {
+                    padding: 20px;
+                }
+                
+                h1 {
+                    font-size: 2em;
+                }
+                
+                .contact-list {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        </style>
     </head>
 
     <body>
+        <div class="card">
+            <h1>Jaey Kim</h1>
+            <p class="subtitle">Mechanical Engineering Student | Robotics & Sustainability Enthusiast</p>
 
-        <details>
-            <summary><strong>Whole-arm manipulator</strong></summary>
-            <p>
-                The field of robotic manipulation is undergoing rapid transformation with the integration of high-performance control systems, lightweight actuators, and intelligent vision-based perception. Autonomous robotic manipulators that can see, think, and act independently are becoming foundational technologies across numerous industries—including logistics, manufacturing, service robotics, and medical applications. In particular, the fusion of real-time computer vision and autonomous motion planning has become a significant research and industrial focus globally, as evidenced by projects like Tesla’s Optimus, Boston Dynamics' Atlas with object interaction, and Amazon’s warehouse robots. These systems demand robust sensor integration and efficient, agile actuation for dynamic and intelligent interaction with unstructured environments.
-            </p>
-            <p>
-                At North Carolina State University, our student-led research team has developed a six-degrees-of-freedom robotic arm using stepper motors and a DC-motor-powered gripper. We are actively designing and implementing a high-level controller to autonomously complete tasks such as object detection, grasping, and relocation. While the current setup allows for fundamental kinematic experimentation and initial controller validation, a major challenge has emerged: the stepper motors used in the joints are too bulky and heavy, which significantly limits the robot’s responsiveness, payload capacity, and agility.
-            </p>
-            <p>
-                To overcome this, we propose transitioning to brushless DC (BLDC) motors paired with Field-Oriented Control (FOC) drivers such as the DRV8302 or ODrive S1. Unlike stepper motors, BLDC motors with FOC offer precise and responsive control over speed, position, and torque while enabling both passive and active compliance within the system. BLDC motors are also significantly more power-dense, lightweight, and efficient, with the ability to achieve higher speeds and torque outputs. Additionally, they produce less heat and operate with smoother (and quieter) motion, which is critical for dynamic robotic arms performing fine motor tasks.
-            </p>
-            <p>
-                To achieve full autonomy in perception and manipulation, we also propose integrating a Luxonis OAK-4 S camera, a powerful AI-enabled RGB-D vision system that supports onboard neural network inference and spatial object detection. This camera enables real-time scene understanding, object localization, and high-precision pose estimation—key capabilities for autonomous grasping and placement.
-            </p>
-            <p>
-                Through this project, we aim to redesign our manipulator for lightweight and speed-optimized performance while developing an intelligent control framework that enables the robot to perceive, plan, and execute motions independently. Our efforts represent a student-driven initiative to advance NC State University’s presence in the field of intelligent robotics and contribute meaningfully to the broader robotics research community.
-            </p>
-        </details>
-        <!-- <details>
-            <summary><strong>Manipulator</strong> (click to expand):</summary>
-            - 📂 [Complex Urban Dataset](https://sites.google.com/view/complex-urban-dataset) : Complex Urban Dataset with Multi-level Sensors from Highly Diverse Urban Environments;
-            - 📂 [MulRan](https://sites.google.com/view/mulran-pr/home) : Multimodal Range Dataset for Urban Place Recognition;
-            - 📂 [STheReO Dataset](https://sites.google.com/view/rpmsthereo/) : Stereo Thermal Dataset for Research in Odometry and Mapping;
-            - 📂 [TRansPose](https://sites.google.com/view/transpose-dataset/) : Large-Scale Multispectral Dataset for Transparent Object;
-            - 📂 [HeLiPR Dataset](https://sites.google.com/view/heliprdataset) : Heterogeneous LiDAR Dataset for inter-LiDAR Place Recognition;
-        </details> -->
-        <details>
-            <summary><strong>Dynamic Jumping of Quadruped Robots via Adaptive Planning of Contacts and Variable-Frequency Predictive Control</strong></summary>
-            <p><i>
-                Abstract—Dynamic and adaptive jumping in quadruped robots has been extensively studied to enhance mobility over rough terrains and in dynamic environments. One of the challenges in this domain is designing contact sequences and generating optimal center-of-mass (CoM) trajectories to improve both the stability and performance of jumping behaviors. In this study, we propose a novel framework that integrates trajectory optimization, whole-body control (WBC), and model predictive control (MPC) to produce more agile and efficient jumping motions for quadruped robots. One of the main contributions of the proposed study is the dynamic adjustment of the prediction horizon in MPC based on a reduced-order model, such as the single rigid-body (SRB) dynamic model. This adaptive design leverages physical insights into jumping behaviors depending on each contact mode to significantly improve computational efficiency, which is critical for real-time applications in layered control architectures. Furthermore, we ensure dynamic consistency by integrating the reduced-order MPC and full-order WBC, enabling more accurate and robust execution of the optimized motion under the optimized sequence of contacts. The effectiveness of the proposed approach is demonstrated through high-fidelity simulations and experiments involving sequential jumping tasks, where the robot exhibits improved landing stability, increased jumping height, and extended jump distance compared to baseline methods.
-            </i>
-            </p>
-        </details>
-        <em>
-            test
-        </em>
+            <div class="section">
+                <h2>Education</h2>
+                <ul>
+                    <li>North Carolina State University - BS Mechanical Engineering</li>
+                    <li>Minors: Computer Science, Entrepreneurship</li>
+                    <li>Expected Graduation: 2025</li>
+                </ul>
+            </div>
 
-    </body>
-    
+            <div class="section">
+                <h2>Research Interests</h2>
+                <ul>
+                    <li>Locomotion: Biomechanics and robotic mobility systems</li>
+                    <li>Manipulator Design: Robotic arm control and autonomous manipulation</li>
+                    <li>Sustainability: Green technology and environmental engineering solutions</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Projects</h2>
+                
+                <details>
+                    <summary>Whole-arm Manipulator</summary>
+                    <p>
+                        The field of robotic manipulation is undergoing rapid transformation with the integration of high-performance control systems, lightweight actuators, and intelligent vision-based perception. Autonomous robotic manipulators that can see, think, and act independently are becoming foundational technologies across numerous industries—including logistics, manufacturing, service robotics, and medical applications.
+                    </p>
+                    <p>
+                        At North Carolina State University, our student-led research team has developed a six-degrees-of-freedom robotic arm using stepper motors and a DC-motor-powered gripper. We are actively designing and implementing a high-level controller to autonomously complete tasks such as object detection, grasping, and relocation.
+                    </p>
+                    <p>
+                        To overcome current limitations, we propose transitioning to brushless DC (BLDC) motors paired with Field-Oriented Control (FOC) drivers. We also plan to integrate a Luxonis OAK-4 S camera for AI-enabled RGB-D vision and real-time object detection.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Web Development Portfolio</summary>
+                    <p>
+                        A collection of web applications built using modern technologies including React, Node.js, and MongoDB. Projects include e-commerce platforms, data visualization dashboards, and responsive portfolio websites.
+                    </p>
+                </details>
+
+                <details>
+                    <summary>Computer Vision Applications</summary>
+                    <p>
+                        Developed various computer vision projects using OpenCV and Python, including object detection systems, image classification models, and real-time video processing applications for robotics integration.
+                    </p>
+                </details>
+            </div>
+
+            <div class="section">
+                <h2>Contact</h2>
+                <div class="contact-list">
+                    <a href="mailto:jkim@ncsu.edu" class="contact-item">📧 Email</a>
+                    <a href="https://github.com/jaeykimusa" class="contact-item">💻 GitHub</a>
+                    <a href="https://linkedin.com/in/jaeykimusa" class="contact-item">💼 LinkedIn</a>
+                    <a href="tel:+1234567890" class="contact-item">📱 Phone</a>
+                </div>
+            </div>
+        </div>
+    </body>   
 </html>
