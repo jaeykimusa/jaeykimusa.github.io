@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Helper 3D Model</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #87CEEB 0%, #98FB98 50%, #F0E68C 100%);
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+            overflow: hidden;
+        }
+
+        .scene {
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 15s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotateY(0deg) rotateX(15deg); }
+            25% { transform: rotateY(90deg) rotateX(15deg); }
+            50% { transform: rotateY(180deg) rotateX(15deg); }
+            75% { transform: rotateY(270deg) rotateX(15deg); }
+            100% { transform: rotateY(360deg) rotateX(15deg); }
+        }
+
+        .device {
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        /* Main Device Body */
+        .device-body {
+            position: relative;
+            transform-style: preserve-3d;
+            margin-bottom: 40px;
+        }
+
+        .device-face {
+            width: 300px;
+            height: 200px;
+            border-radius: 25px;
+            position: absolute;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Front Face - Display Screen */
+        .front-face {
+            background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+            transform: translateZ(20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .screen {
+            width: 270px;
+            height: 170px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 14px;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .screen-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+
+        .music-icon {
+            font-size: 20px;
+            color: #4CAF50;
+        }
+
+        .music-text {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .plant-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .moisture-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .moisture-percentage {
+            font-size: 28px;
+            font-weight: bold;
+            color: #00BCD4;
+        }
+
+        .moisture-icon {
+            font-size: 16px;
+            color: #00BCD4;
+        }
+
+        .plant-details {
+            flex: 1;
+        }
+
+        .plant-avatar {
+            width: 35px;
+            height: 35px;
+            background: #8BC34A;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .detail-line {
+            margin: 2px 0;
+            font-size: 11px;
+        }
+
+        /* Back Face - Solar Panel */
+        .back-face {
+            background: linear-gradient(135deg, #1565C0 0%, #1976D2 100%);
+            transform: translateZ(-20px) rotateY(180deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .solar-panel {
+            width: 270px;
+            height: 170px;
+            background: linear-gradient(45deg, #1976D2 0%, #42A5F5 100%);
+            border-radius: 10px;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 3px;
+            padding: 8px;
+        }
+
+        .solar-cell {
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+            animation: glimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes glimmer {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .solar-cell:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        /* Side Faces */
+        .top-face {
+            width: 300px;
+            height: 40px;
+            background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+            border-radius: 25px 25px 0 0;
+            transform: rotateX(90deg) translateZ(20px);
+        }
+
+        .bottom-face {
+            width: 300px;
+            height: 40px;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            border-radius: 0 0 25px 25px;
+            transform: rotateX(-90deg) translateZ(180px);
+        }
+
+        .left-face {
+            width: 40px;
+            height: 200px;
+            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+            border-radius: 25px 0 0 25px;
+            transform: rotateY(-90deg) translateZ(20px);
+        }
+
+        .right-face {
+            width: 40px;
+            height: 200px;
+            background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+            border-radius: 0 25px 25px 0;
+            transform: rotateY(90deg) translateZ(280px);
+        }
+
+        /* Control Buttons on Side */
+        .controls {
+            position: absolute;
+            right: -25px;
+            top: 50%;
+            transform: translateY(-50%) translateZ(20px);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .control-button {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+            transform-style: preserve-3d;
+        }
+
+        .power-btn { background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); }
+        .volume-btn { background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%); }
+        .mode-btn { background: linear-gradient(135deg, #9C27B0 0%, #7B1FA2 100%); }
+
+        /* Speaker */
+        .speaker {
+            position: absolute;
+            bottom: -30px;
+            right: -20px;
+            width: 15px;
+            height: 40px;
+            background: linear-gradient(135deg, #424242 0%, #212121 100%);
+            border-radius: 8px;
+            transform: translateZ(20px);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .speaker::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 3px;
+            width: 9px;
+            height: 24px;
+            background: #666;
+            border-radius: 4px;
+        }
+
+        /* Sensor Probes */
+        .probes-container {
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 80px;
+            transform-style: preserve-3d;
+        }
+
+        .probe-set {
+            display: flex;
+            gap: 20px;
+        }
+
+        .probe {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .probe-segment {
+            width: 10px;
+            height: 20px;
+            margin-bottom: 2px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .probe-segment:nth-child(odd) { 
+            background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%); 
+        }
+        .probe-segment:nth-child(even) { 
+            background: linear-gradient(135deg, #9E9E9E 0%, #757575 100%); 
+        }
+
+        .probe-tip {
+            width: 6px;
+            height: 15px;
+            background: linear-gradient(135deg, #424242 0%, #212121 100%);
+            border-radius: 3px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Ground Shadow */
+        .ground-shadow {
+            position: absolute;
+            bottom: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 350px;
+            height: 80px;
+            background: radial-gradient(ellipse, rgba(0,0,0,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: shadowPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes shadowPulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(76, 175, 80, 0.6);
+            border-radius: 50%;
+            animation: float-particle 8s ease-in-out infinite;
+        }
+
+        @keyframes float-particle {
+            0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-120px) translateX(30px); opacity: 0; }
+        }
+
+        .particle:nth-child(1) { left: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 40%; animation-delay: 2s; }
+        .particle:nth-child(3) { left: 60%; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 80%; animation-delay: 6s; }
+
+        /* Title */
+        .title {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .title h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .title p {
+            margin: 5px 0 0 0;
+            font-size: 1em;
+            opacity: 0.9;
+        }
+
+        /* Status indicator */
+        .status-light {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            width: 8px;
+            height: 8px;
+            background: #4CAF50;
+            border-radius: 50%;
+            animation: blink 2s ease-in-out infinite;
+            transform: translateZ(25px);
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+
+    <div class="scene">
+        <div class="title">
+            <h1>PLANT HELPER</h1>
+            <p>Smart Plant Monitor - 3D View</p>
+        </div>
+
+        <div class="device">
+            <div class="device-body">
+                <!-- Front Face - Display -->
+                <div class="device-face front-face">
+                    <div class="screen">
+                        <div class="screen-header">
+                            <div class="music-icon">🎵</div>
+                            <div class="music-text">Classical Collection Playing</div>
+                        </div>
+                        <div class="plant-info">
+                            <div class="moisture-display">
+                                <div class="moisture-percentage">87%</div>
+                                <div class="moisture-icon">💧</div>
+                            </div>
+                            <div class="plant-details">
+                                <div class="plant-avatar">🌹</div>
+                                <div class="detail-line"><strong>Name:</strong> Rosie</div>
+                                <div class="detail-line"><strong>Age:</strong> 3 months</div>
+                                <div class="detail-line"><strong>Type:</strong> Rose</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Face - Solar Panel -->
+                <div class="device-face back-face">
+                    <div class="solar-panel">
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                        <div class="solar-cell"></div>
+                    </div>
+                </div>
+
+                <!-- Side Faces -->
+                <div class="device-face top-face"></div>
+                <div class="device-face bottom-face"></div>
+                <div class="device-face left-face"></div>
+                <div class="device-face right-face"></div>
+
+                <!-- Status Light -->
+                <div class="status-light"></div>
+
+                <!-- Controls -->
+                <div class="controls">
+                    <div class="control-button power-btn">⚡</div>
+                    <div class="control-button volume-btn">+</div>
+                    <div class="control-button mode-btn">|</div>
+                </div>
+
+                <!-- Speaker -->
+                <div class="speaker"></div>
+            </div>
+
+            <!-- Sensor Probes -->
+            <div class="probes-container">
+                <div class="probe-set">
+                    <div class="probe">
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-tip"></div>
+                    </div>
+                    <div class="probe">
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-tip"></div>
+                    </div>
+                </div>
+                <div class="probe-set">
+                    <div class="probe">
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-tip"></div>
+                    </div>
+                    <div class="probe">
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-segment"></div>
+                        <div class="probe-tip"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ground-shadow"></div>
+    </div>
+</body>
+</html>

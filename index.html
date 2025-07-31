@@ -4,213 +4,181 @@
         <meta charset="UTF-8">
         <title>jaeykimusa</title>
         <link rel="icon" type="image/x-icon" href="">
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
-                background-color: white;
-                color: black;
-                line-height: 1.5;
-                padding: 40px;
-                max-width: 800px;
-                margin: 0 auto;
-                font-size: 14px;
-            }
-
-            .card {
-                background: transparent;
-                padding: 0;
-                margin-bottom: 0;
-            }
-
-            h1 {
-                font-size: 1.5em;
-                color: black;
-                text-align: center;
-                margin-bottom: 8px;
-                padding-bottom: 8px;
-            }
-
-            .subtitle {
-                text-align: center;
-                color: black;
-                font-size: 1em;
-                margin-bottom: 25px;
-            }
-
-            .section {
-                margin-bottom: 25px;
-            }
-
-            .section h2 {
-                color: black;
-                font-size: 1.1em;
-                margin-bottom: 12px;
-                padding-left: 0;
-            }
-
-            .section ul {
-                list-style: none;
-                padding-left: 15px;
-            }
-
-            .section li {
-                padding: 8px 0 8px 25px;
-                border-bottom: 1px solid #ecf0f1;
-                background-image: url('black-arrow-button.png');
-                background-repeat: no-repeat;
-                background-position: left center;
-                background-size: 12px 12px;
-            }
-
-            .section li:last-child {
-                border-bottom: none;
-            }
-
-            .contact-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-            }
-
-            .contact-item {
-                background: #3498db;
-                color: white;
-                padding: 8px 16px;
-                border-radius: 25px;
-                text-decoration: none;
-                transition: background 0.3s ease;
-                font-weight: 400;
-                font-size: 0.9em;
-            }
-
-            .contact-item:hover {
-                background: #2980b9;
-                transform: translateY(-2px);
-            }
-
-            details {
-                margin: 15px 0;
-                border: 1px solid #bdc3c7;
-                border-radius: 8px;
-                overflow: hidden;
-            }
-
-            summary {
-                background: #ecf0f1;
-                padding: 12px 15px;
-                cursor: pointer;
-                font-weight: 400;
-                color: black;
-                transition: background 0.3s ease;
-                font-size: 0.95em;
-            }
-
-            summary:hover {
-                background: #d5dbdb;
-            }
-
-            details p {
-                padding: 15px;
-                text-align: justify;
-                color: black;
-                font-size: 0.9em;
-            }
-
-            .skills {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-
-            .skill-tag {
-                background: #e8f5e8;
-                color: #27ae60;
-                padding: 5px 12px;
-                border-radius: 15px;
-                font-size: 0.9em;
-                border: 1px solid #27ae60;
-            }
-
-            @media (max-width: 600px) {
-                body {
-                    padding: 10px;
-                }
-                
-                .card {
-                    padding: 20px;
-                }
-                
-                h1 {
-                    font-size: 2em;
-                }
-                
-                .contact-list {
-                    flex-direction: column;
-                    align-items: center;
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
+        <nav class="nav">
+            <div class="nav-left">
+                <a href="index.html" class="active">Home</a>
+            </div>
+            <div class="nav-right">
+                <a href="cv.html">CV</a>
+                <a href="about.html">About Me</a>
+            </div>
+        </nav>
+
         <div class="card">
             <h1>Jaey Kim</h1>
-            <p class="subtitle">Mechanical Engineering Student | Robotics & Sustainability Enthusiast</p>
+            <p class="subtitle">Engineering Student, Developer, and Researcher.</p>
 
-            <div class="section">
-                <h2>Education</h2>
-                <ul>
-                    <li>North Carolina State University - BS Mechanical Engineering</li>
-                    <li>Minors: Computer Science, Entrepreneurship</li>
-                    <li>Expected Graduation: 2025</li>
-                </ul>
+            <div class="social-buttons">
+                <a href="https://linkedin.com/in/jaeykimusa" class="social-button" target="_blank">
+                    <img src="assets/linkedin-logo.png" alt="LinkedIn">
+                    LinkedIn
+                </a>
+                <a href="https://github.com/jaeykimusa" class="social-button" target="_blank">
+                    <img src="assets/github-logo.png" alt="GitHub">
+                    GitHub
+                </a>
             </div>
 
             <div class="section">
-                <h2>Research Interests</h2>
+                <h2>Interests</h2>
                 <ul>
-                    <li>Locomotion: Biomechanics and robotic mobility systems</li>
-                    <li>Manipulator Design: Robotic arm control and autonomous manipulation</li>
-                    <li>Sustainability: Green technology and environmental engineering solutions</li>
+                    <li>Robotics Locomotion</li>
+                    <li>Robotics Manipulator</li>
+                    <li><span class="green-text">Sustainability</span></li>
                 </ul>
             </div>
 
             <div class="section">
                 <h2>Projects</h2>
                 
-                <details>
-                    <summary>Whole-arm Manipulator</summary>
-                    <p>
-                        The field of robotic manipulation is undergoing rapid transformation with the integration of high-performance control systems, lightweight actuators, and intelligent vision-based perception. Autonomous robotic manipulators that can see, think, and act independently are becoming foundational technologies across numerous industries—including logistics, manufacturing, service robotics, and medical applications.
-                    </p>
-                    <p>
-                        At North Carolina State University, our student-led research team has developed a six-degrees-of-freedom robotic arm using stepper motors and a DC-motor-powered gripper. We are actively designing and implementing a high-level controller to autonomously complete tasks such as object detection, grasping, and relocation.
-                    </p>
-                    <p>
-                        To overcome current limitations, we propose transitioning to brushless DC (BLDC) motors paired with Field-Oriented Control (FOC) drivers. We also plan to integrate a Luxonis OAK-4 S camera for AI-enabled RGB-D vision and real-time object detection.
-                    </p>
-                </details>
+                <div class="project-item">
+                    <div class="project-image">
+                        <span>Robot Image</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Whole-arm Manipulator</h3>
+                            <p class="project-brief">Student-led development of a six-degrees-of-freedom robotic arm with autonomous manipulation capabilities, featuring computer vision and intelligent control systems.</p>
+                            <button class="expand-button" onclick="toggleProject('project1')">Read More</button>
+                        </div>
+                        <div class="project-details" id="project1">
+                            <p>
+                                The field of robotic manipulation is undergoing rapid transformation with the integration of high-performance control systems, lightweight actuators, and intelligent vision-based perception. Autonomous robotic manipulators that can see, think, and act independently are becoming foundational technologies across numerous industries—including logistics, manufacturing, service robotics, and medical applications.
+                            </p>
+                            <p>
+                                At North Carolina State University, our student-led research team has developed a six-degrees-of-freedom robotic arm using stepper motors and a DC-motor-powered gripper. We are actively designing and implementing a high-level controller to autonomously complete tasks such as object detection, grasping, and relocation.
+                            </p>
+                            <p>
+                                To overcome current limitations, we propose transitioning to brushless DC (BLDC) motors paired with Field-Oriented Control (FOC) drivers. We also plan to integrate a Luxonis OAK-4 S camera for AI-enabled RGB-D vision and real-time object detection.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                <details>
-                    <summary>Web Development Portfolio</summary>
-                    <p>
-                        A collection of web applications built using modern technologies including React, Node.js, and MongoDB. Projects include e-commerce platforms, data visualization dashboards, and responsive portfolio websites.
-                    </p>
-                </details>
+                <div class="project-item">
+                    <div class="project-image">
+                        <span>SRB</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Perfect Trajectory Optimization for 3D Jumping on Quadruped Robots</h3>
+                            <p class="project-brief">Applying single-rigid body (SRB) dynamics for adaptable contact plannings and full-body trajectory optimization with variable-frequency time horizons to make trajectory optimization for complex jumping efficient by 40%! </p>
+                            <button class="expand-button" onclick="toggleProject('project2')">Read More</button>
+                        </div>
+                        <div class="project-details" id="project2">
+                            <p>
+                                A comprehensive collection of web applications built using modern technologies including React, Node.js, and MongoDB. Projects include e-commerce platforms, data visualization dashboards, and responsive portfolio websites.
+                            </p>
+                            <p>
+                                Each project demonstrates proficiency in full-stack development, responsive design principles, and modern JavaScript frameworks. The applications feature clean user interfaces, efficient backend systems, and scalable database architectures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                <details>
-                    <summary>Computer Vision Applications</summary>
-                    <p>
-                        Developed various computer vision projects using OpenCV and Python, including object detection systems, image classification models, and real-time video processing applications for robotics integration.
-                    </p>
-                </details>
+                <div class="project-item">
+                    <div class="project-image">
+                        <span>SRB</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Contact Timing Optimization for 3D Jumping on Legged Robots</h3>
+                            <p class="project-brief">Collection of modern web applications including e-commerce platforms, data visualization dashboards, and responsive portfolio websites.</p>
+                            <button class="expand-button" onclick="toggleProject('project3')">Read More</button>
+                        </div>
+                        <div class="project-details" id="project3">
+                            <p>
+                                A comprehensive collection of web applications built using modern technologies including React, Node.js, and MongoDB. Projects include e-commerce platforms, data visualization dashboards, and responsive portfolio websites.
+                            </p>
+                            <p>
+                                Each project demonstrates proficiency in full-stack development, responsive design principles, and modern JavaScript frameworks. The applications feature clean user interfaces, efficient backend systems, and scalable database architectures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="assets/wolf_mini_demo_clean.png" alt="Wolf Mini Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px;">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Wolf Mini</h3>
+                            <p class="project-brief">Developing NC State's own wolf-motived quadruped robot.</p>
+                            <button class="expand-button" onclick="toggleProject('project4')">Read More</button>
+                        </div>
+                        <div class="project-details" id="project4">
+                            <p>
+                                A comprehensive collection of web applications built using modern technologies including React, Node.js, and MongoDB. Projects include e-commerce platforms, data visualization dashboards, and responsive portfolio websites.
+                            </p>
+                            <p>
+                                Each project demonstrates proficiency in full-stack development, responsive design principles, and modern JavaScript frameworks. The applications feature clean user interfaces, efficient backend systems, and scalable database architectures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-image">
+                        <span>Web Dev</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Re-Battery Recycling Program</h3>
+                            <p class="project-brief">Led a statewide sustainability initiative repurposing 14,000+ used batteries; installed custom recycling bins at major universities and schools across North Carolina.</p>
+                            <button class="expand-button" onclick="toggleProject('project5')">Read More</button>
+                        </div>
+                        <div class="project-details" id="project5">
+                            <p>
+                                As Founder and President, I launched and led a sustainability 
+                                initiative focused on repurposing used batteries and raising 
+                                awareness about proper e-waste disposal. Motivated by the 
+                                environmental impact of improperly discarded batteries, I 
+                                assembled and led a team to design, manufacture, and distribute 
+                                custom battery recycling bins. These bins were placed at North 
+                                Carolina State University, UNC Chapel Hill, and six high schools 
+                                across Pitt County.
+                            <p>
+                                To date, the program has collected and repurposed over 14,000 batteries, providing a scalable and accessible disposal solution for local communities. In addition to operations, I oversaw outreach efforts, collaborated with school administrators and university facilities teams, and secured support from local organizations. This initiative continues to grow and serve as a model for student-led sustainability efforts in the region.                            </p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-image">
+                        <span>CV Image</span>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Plant Helper</h3>
+                            <p class="project-brief">Various computer vision projects using OpenCV and Python for object detection, image classification, and real-time video processing.</p>
+                            <button class="expand-button" onclick="toggleProject('project6')">Read More</button>
+                        </div>
+                        <div class="project-details" id="project6">
+                            <p>
+                                Developed various computer vision projects using OpenCV and Python, including object detection systems, image classification models, and real-time video processing applications for robotics integration.
+                            </p>
+                            <p>
+                                Projects include real-time face detection, automated quality control systems for manufacturing, and intelligent surveillance applications. Each system demonstrates advanced image processing techniques and machine learning integration.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="section">
@@ -223,5 +191,36 @@
                 </div>
             </div>
         </div>
+        
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <div>Designed and created by Jaey Kim.</div>
+                    <div class="footer-contact">
+                        <span>Email: jaeykimusa@gmail.com</span>
+                        <span>Phone: +1 (252) 408-3365</span>
+                        <span>Location: Triangle Area, NC USA</span>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <div>© 2025 jaeykimusa. <br>All rights reserved</div>
+                </div>
+            </div>
+        </footer>
+        
+        <script>
+            function toggleProject(projectId) {
+                const details = document.getElementById(projectId);
+                const button = event.target;
+                
+                if (details.classList.contains('expanded')) {
+                    details.classList.remove('expanded');
+                    button.textContent = 'Read More';
+                } else {
+                    details.classList.add('expanded');
+                    button.textContent = 'Show Less';
+                }
+            }
+        </script>
     </body>   
 </html>
