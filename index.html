@@ -47,65 +47,63 @@
                 
                 <div class="project-item">
                     <div class="project-image">
-                        <span>Robot Image</span>
+                        <img src="assets/backflip.png" alt="Go2 Backflips" style="height: 100%; width: 100%; object-fit: cover; border-radius: 6px;">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-header">
+                            <h3 class="project-title">Perfect Trajectory Optimization for 3D Jumping on Quadruped Robots</h3>
+                            <p class="project-brief">Applying single rigid body (SRB) dynamics for adaptive contact planning and full-body trajectory optimization with variable-frequency horizons to make complex jumping 40% more efficient!</p>
+                            <button class="expand-button" onclick="toggleProject('project1')">Read More</button>
+                        </div>
+                        <div class="project-details" id="project1">
+                            <p>
+                                The full-body trajectory optimization refines motion plans using the robot's complete dynamics, joint limits, and contact constraints. It incorporates contact timings computed from the reduced-order SRB model and solves for detailed joint trajectories and ground reaction forces. By employing a variable-frequency horizon—allocating more resolution to critical motion phases—the method achieves higher-quality motion planning with less computational load. This approach reduced the solving time by an average of 39.8% across multiple jump types, demonstrating its efficiency and scalability for dynamic quadruped behaviors.                            </p>
+                            <embed src="assets/poster.pdf" type="application/pdf" width="100%" height="100%">
+                            <p><a href="https://drive.google.com/file/d/1ASJdOevFZLDgty0ATdIP54JWZKhiapVJ/view?usp=sharing">Click here for full poster.</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-image">
+                        <img src="assets/manipulator-sholder.png" alt="Manipulator Sholder" style="width: 100%; object-fit: cover; border-radius: 6px;">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Whole-arm Manipulator</h3>
                             <p class="project-brief">Student-led development of a six-degrees-of-freedom robotic arm with autonomous manipulation capabilities, featuring computer vision and intelligent control systems.</p>
-                            <button class="expand-button" onclick="toggleProject('project1')">Read More</button>
-                        </div>
-                        <div class="project-details" id="project1">
-                            <p>
-                                The field of robotic manipulation is undergoing rapid transformation with the integration of high-performance control systems, lightweight actuators, and intelligent vision-based perception. Autonomous robotic manipulators that can see, think, and act independently are becoming foundational technologies across numerous industries—including logistics, manufacturing, service robotics, and medical applications.
-                            </p>
-                            <p>
-                                At North Carolina State University, our student-led research team has developed a six-degrees-of-freedom robotic arm using stepper motors and a DC-motor-powered gripper. We are actively designing and implementing a high-level controller to autonomously complete tasks such as object detection, grasping, and relocation.
-                            </p>
-                            <p>
-                                To overcome current limitations, we propose transitioning to brushless DC (BLDC) motors paired with Field-Oriented Control (FOC) drivers. We also plan to integrate a Luxonis OAK-4 S camera for AI-enabled RGB-D vision and real-time object detection.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-image">
-                        <span>SRB</span>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-header">
-                            <h3 class="project-title">Perfect Trajectory Optimization for 3D Jumping on Quadruped Robots</h3>
-                            <p class="project-brief">Applying single-rigid body (SRB) dynamics for adaptable contact plannings and full-body trajectory optimization with variable-frequency time horizons to make trajectory optimization for complex jumping efficient by 40%! </p>
                             <button class="expand-button" onclick="toggleProject('project2')">Read More</button>
                         </div>
                         <div class="project-details" id="project2">
                             <p>
-                                A comprehensive collection of web applications built using modern technologies including React, Node.js, and MongoDB. Projects include e-commerce platforms, data visualization dashboards, and responsive portfolio websites.
+                                The field of robotic manipulation is rapidly advancing through the integration of high-performance control systems, lightweight actuators, and intelligent vision-based perception. Autonomous robotic manipulators that can see, think, and act are becoming foundational across industries such as logistics, manufacturing, service robotics, and healthcare.
                             </p>
                             <p>
-                                Each project demonstrates proficiency in full-stack development, responsive design principles, and modern JavaScript frameworks. The applications feature clean user interfaces, efficient backend systems, and scalable database architectures.
+                                At North Carolina State University, our student-led research team is developing a six-degrees-of-freedom robotic arm powered by stepper motors with gearboxes for joint actuation and a servo motor-driven gripper for precise object handling. The system architecture is built around Arduino-based controllers and motor drivers, enabling modular and accessible development of control logic and motion planning.
+                            </p>
+                            <p>
+                                To enhance autonomy and perception, we are integrating a Luxonis OAK-4 S RGB-D camera for real-time, AI-powered object detection and spatial awareness. This will support tasks such as dynamic object grasping and placement, advancing the arm’s ability to operate in unstructured environments.
                             </p>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-item">
-                    <div class="project-image">
-                        <span>SRB</span>
+                    <div class="project-image" style="background-color: white;">
+                        <img src="assets/srbd-jump.gif" alt="Forward Jump" style="width: 100%; object-fit: cover; border-radius: 6px;">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Contact Timing Optimization for 3D Jumping on Legged Robots</h3>
-                            <p class="project-brief">Collection of modern web applications including e-commerce platforms, data visualization dashboards, and responsive portfolio websites.</p>
+                            <p class="project-brief">Contact timing optimization using single rigid body dynamics for adaptive and efficient quadruped jumping maneuvers.</p>
                             <button class="expand-button" onclick="toggleProject('project3')">Read More</button>
                         </div>
                         <div class="project-details" id="project3">
                             <p>
-                                A comprehensive collection of web applications built using modern technologies including React, Node.js, and MongoDB. Projects include e-commerce platforms, data visualization dashboards, and responsive portfolio websites.
+                                Contact timing optimization determines the optimal moments for a robot to initiate and break ground contact during dynamic maneuvers like jumping. In this work, a reduced-order model based on single rigid body (SRB) dynamics was used to solve for phase durations and center-of-mass trajectories. These results inform a full-body trajectory optimization, enabling efficient generation of physically consistent motions while significantly reducing computational cost.
                             </p>
                             <p>
-                                Each project demonstrates proficiency in full-stack development, responsive design principles, and modern JavaScript frameworks. The applications feature clean user interfaces, efficient backend systems, and scalable database architectures.
+                                This approach is essential for adaptive contact planning, allowing the robot to adjust its contact sequences in response to task demands and environmental changes. By optimizing contact timing instead of relying on fixed schedules, the robot achieves more robust, stable, and versatile behaviors—key for executing agile motions in complex, real-world settings.
                             </p>
                         </div>
                     </div>
@@ -123,22 +121,13 @@
                         </div>
                         <div class="project-details" id="project4">
                             <p>
-                                As part of the Wolf Mini robotics project, I focused on the 
-                                mechanical design and development of custom high-torque actuators 
-                                for a compact quadruped platform. Specifically, I designed 
-                                brushless cycloidal-drive actuators with a 1:35 reduction 
-                                ratio—chosen for their high torque density, shock resistance, and 
-                                backdrivability, all critical for agile legged locomotion.
+                                We are already taking steps to develop a quadruped robot designed to serve as a mobile platform for our robotic manipulator—enabling the arm to operate freely in real-world environments. This integrated system expands the manipulator's application by combining mobility with precision interaction, allowing for complex, autonomous tasks in dynamic and unstructured settings.
                             </p>
                             <p>
-                                The actuators were tailored for the Wolf Mini's size and 
-                                performance needs, balancing compactness with power output to 
-                                enable dynamic motion while maintaining structural efficiency. 
-                                This involved iterative CAD modeling, torque analysis, and 
-                                integrating the actuator system with the robot’s mechanical and 
-                                control architecture. This work laid the foundation for robust 
-                                joint actuation in the prototype and set the stage for future 
-                                enhancements in mobility and control.
+                                As part of the Wolf Mini robotics project, I focused on the mechanical design and development of custom high-torque actuators for this compact quadruped platform. Specifically, I designed brushless cycloidal-drive actuators with a 1:35 reduction ratio, chosen for their high torque density, shock resistance, and backdrivability—key traits for agile legged locomotion.
+                            </p>
+                            <p>
+                                The actuators were carefully tailored to match Wolf Mini’s size and performance needs, balancing compactness and power output to support dynamic motion while ensuring mechanical efficiency. This process involved iterative CAD modeling, torque analysis, and seamless integration of the actuators within the robot’s structural and control systems. The work provides a strong foundation for reliable joint actuation and sets the stage for future mobility and manipulator-arm integration.
                             </p>
                         </div>
                     </div>
@@ -146,7 +135,7 @@
 
                 <div class="project-item">
                     <div class="project-image">
-                        <span>Web Dev</span>
+                        <img src="assets/re-battery-bins.png" alt="Re-Battery Bins" style="width: 90%; object-fit: cover; border-radius: 6px;">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
@@ -170,12 +159,12 @@
 
                 <div class="project-item">
                     <div class="project-image-gradient">
-                        <span>CV Image</span>
+                        <img src="assets/plant-helper.png" alt="Plant Helper" style="width: 100%; object-fit: cover; border-radius: 6px;">
                     </div>
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Plant Helper</h3>
-                            <p class="project-brief">An eco-friendly plant's smart friend that won $2700 in a South Korea sponsored by Samsung Display!</p>
+                            <p class="project-brief">An eco-friendly plant's smart friend that won $2700 in South Korea sponsored by Samsung Display!</p>
                             <button class="expand-button" onclick="toggleProject('project6')">Read More</button>
                         </div>
                         <div class="project-details" id="project6">
@@ -194,7 +183,7 @@
             </div>
 
             <div class="section">
-                <h2>Publication</h2>
+                <h2>Publications</h2>
                 <div class="publication-entry">
                     <div class="title">Dynamic Jumping of Quadruped Robots via Adaptive Planning of Contacts and Variable-Frequency Predictive Control</div>
                     <div class="authors">Jaeyoon Kim, Dr. Jaemin Lee — NC State University, Department of Mechanical and Aerospace Engineering</div>
@@ -207,7 +196,7 @@
                 </div>
             </div>
 
-            <div class="section">
+            <!-- <div class="section">
                 <h2>Contact</h2>
                 <div class="contact-list">
                     <a href="mailto:jkim@ncsu.edu" class="contact-item">📧 Email</a>
@@ -215,7 +204,7 @@
                     <a href="https://linkedin.com/in/jaeykimusa" class="contact-item">💼 LinkedIn</a>
                     <a href="tel:+1234567890" class="contact-item">📱 Phone</a>
                 </div>
-            </div>
+            </div> -->
         </div>
         
         <footer class="footer">
